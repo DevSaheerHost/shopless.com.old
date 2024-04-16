@@ -24,7 +24,7 @@ ref.on('child_added', function (snapshot) {
   let cableSec = document.querySelector("#cableSec")
 
   cableSec.innerHTML += `
-<a href="#">
+<a href="${data.href}">
      <div class="product">
      <img src="${data.product_image}" alt="">
      <span class="barand_name">${data.brand}</span>
