@@ -25,7 +25,12 @@ ref.child('product_image').once('value', (snapshot) => {
   console.log(item);
 
   //document.querySelector(".addImgMobile").src=item
-    document.querySelector(".addImage").src=item
+    document.querySelector(".banner-add-wrapper").innerHTML+=`
+    <div class="slide">
+                  <img class="addImage" src="${item}" alt="">
+                </div>
+    `
+    showSlides();
 });
 
 
@@ -181,3 +186,20 @@ document.querySelector('#nav_cart').innerHTML+=`
 
 
     
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex-1].style.animationName = "slide";
+  slides[slideIndex-1].style.animationDuration = "4s";
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
