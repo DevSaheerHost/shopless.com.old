@@ -30,7 +30,7 @@ ref.child('product_image').once('value', (snapshot) => {
                   <img class="addImage" src="${item}" alt="">
                 </div>
     `
-    showSlides();
+    setTimeout(showSlides, 1000)
 });
 
 
