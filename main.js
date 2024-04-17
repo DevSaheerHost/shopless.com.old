@@ -48,8 +48,9 @@ database.ref("shopless/home/ads/").on("child_added", (snapshot) => {
     <div class="slide">
                   <img class="addImage" src="${data.product_image}" alt="">
                 </div>`
-  
-      showSlides()
+
+  setTimeout(showSlides, 1600)
+      
   console.log(data)
 
   
