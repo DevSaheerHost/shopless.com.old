@@ -20,18 +20,16 @@ var ref = firebase.database().ref('shopless/home/ads/');
 
 
 // Assuming you want to access an item with the key 'itemId'
-ref.child('product_image').once('value', (snapshot) => {
-  const item = snapshot.val();
-  console.log(item);
+
+//ref.child('product_image').once('value', (snapshot) => {
+//  const item = snapshot.val();
+//  console.log(item);
 
   //document.querySelector(".addImgMobile").src=item
-    document.querySelector(".banner-add-wrapper").innerHTML+=`
-    <div class="slide">
-                  <img class="addImage" src="${item}" alt="">
-                </div>
-    `
-    setTimeout(showSlides, 1000)
-});
+    
+    
+    
+//});
 
 
 database.ref("shopless/home/ads/").on("child_added", (snapshot) => {
@@ -45,8 +43,13 @@ database.ref("shopless/home/ads/").on("child_added", (snapshot) => {
   // var img = data.product_image;
   // var price = data.product_price;
   // var quantity = data.quantity;
+
+  document.querySelector(".banner-add-wrapper").innerHTML+=`
+    <div class="slide">
+                  <img class="addImage" src="${data.product_image}" alt="">
+                </div>`
   
-      
+      showSlides()
   console.log(data)
 
   
